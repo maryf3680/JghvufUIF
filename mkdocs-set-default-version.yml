@@ -6,14 +6,11 @@ on:
         description: 'Version string to be default (e.g."v0.0.1")'
         required: true
 jobs:
-  build:
-    name: Update default docs Version
-    runs-on: ubuntu-latest
+  build:    runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.7
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
 
       - name: Install dependencies
         run: |
@@ -23,8 +20,6 @@ jobs:
           
       - name: Checkout Release from lens
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: git config
         run: |
